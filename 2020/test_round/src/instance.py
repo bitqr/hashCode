@@ -7,7 +7,7 @@ class Instance:
             file_split = x.splitlines()
             self.max_slices = int(file_split[0].split(' ')[0])
             self.max_types = int(file_split[0].split(' ')[1])
-            self.slices_per_type = map(lambda item: int(item), file_split[1].split(' '))
+            self.slices_per_type = list(map(lambda item: int(item), file_split[1].split(' ')))
 
     def to_string(self) -> str:
         result = f'Maximum {self.max_slices} slices and {self.max_types} types\n'

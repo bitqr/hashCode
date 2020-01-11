@@ -77,3 +77,37 @@ class Solver:
                 c -= self.instance.slices_per_type[t]
             t = t-1
         return sorted(result)
+
+    def local_search(self) -> [int]:
+        """Local search method, with simple neighbour, looking for the best swap"""
+        current_solution = self.greedy()
+        current_value = sum(list(map(lambda x: self.instance.slices_per_type[x], current_solution)))
+        remaining_capacity = self.instance.max_slices - current_value
+        local_optimum = False
+        while not local_optimum:
+            best_in, best_out = -1, -1
+            delta = 0
+            for index_to_insert in [x for x in range(0, self.instance.max_types) if x not in current_solution]:
+                for index_to_remove in current_solution:
+                    # Check if the swap is feasible
+                    if remaining_capacity + self.instance.slices_per_type[index_to_remove] >= \
+                     self.instance.slices_per_type[index_to_insert]:
+                        # Check if the delta is sufficient
+                        if self.instance.slices_per_type[index_to_insert] - \
+                         self.instance.slices_per_type[index_to_remove] > delta:
+                            best_in, best_out = index_to_insert, index_to_remove
+                            delta = self.instance.slices_per_type[index_to_insert] - \
+                                self.instance.slices_per_type[index_to_remove]
+            if best_in == -1:
+                local_optimum = True
+            else:
+                # Update current solution
+                current_solution.remove(best_out)
+                current_solution.append(best_in)
+                current_value += delta
+                remaining_capacity -= delta
+                if remaining_capacity == 0:
+                    return sorted(current_solution)
+            print("Current solution value:", current_value)
+            print("Remaining capacity:", remaining_capacity)
+        return sorted(current_solution)

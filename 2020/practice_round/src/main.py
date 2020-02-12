@@ -5,7 +5,7 @@ from solution import Solution
 inputs_array = ['a_example.in', 'b_small.in', 'c_medium.in', 'd_quite_big.in', 'e_also_big.in']
 outputs_array = ['a_example.out', 'b_small.out', 'c_medium.out', 'd_quite_big.out', 'e_also_big.out']
 
-instance_index = 2
+instance_index = 0
 
 file_name = '../inputs/' + inputs_array[instance_index]
 

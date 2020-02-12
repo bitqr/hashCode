@@ -69,13 +69,13 @@ class Solver:
     def dynamic_programming_method(self) -> [int]:
         self.dynamic_programming_optimal_value()
         result = []
-        t = self.instance.max_types-1
-        c = self.instance.max_slices
-        while t >= 0:
-            if self.sub_problems_decision[(t, c)]:
-                result.append(t)
-                c -= self.instance.slices_per_type[t]
-            t = t-1
+        types = self.instance.max_types-1
+        capacity = self.instance.max_slices
+        while types >= 0:
+            if self.sub_problems_decision[(types, capacity)]:
+                result.append(types)
+                capacity -= self.instance.slices_per_type[types]
+            types = types-1
         return sorted(result)
 
     def local_search(self) -> [int]:

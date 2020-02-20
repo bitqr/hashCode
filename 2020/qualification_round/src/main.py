@@ -8,18 +8,15 @@ if __name__ == '__main__':
     outputs_array = ['a_example.out', 'b_read_on.out', 'c_incunabula.out', 'd_tough_choices.out', 'e_so_many_books.out',
                      'f_libraries_of_the_world.out']
 
-    instance_index = 1
+    instance_index = 5
 
-    file_name = '../input/' + inputs_array[instance_index]
+    for instance_index in range(0, 6):
+        file_name = '../input/' + inputs_array[instance_index]
 
-    print("Creating instance...")
-    instance = Instance(file_name)
-    #print(instance.to_string())
+        instance = Instance(file_name)
 
-    solver = Solver(instance)
+        solver = Solver(instance)
 
-    print("Start solving...")
-    solution = solver.solver()
-
-    #print("Score =", solution.compute_score())
-    solution.write('../output/' + outputs_array[instance_index])
+        print("Start solving...")
+        solution = solver.solve_greedy()
+        solution.write('../output/' + outputs_array[instance_index])

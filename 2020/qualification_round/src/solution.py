@@ -9,7 +9,6 @@ class Solution:
 
     def write(self, file_name: str):
         with open(file_name, 'w') as file:
-            print(self.libs)
             file.write(str(len(self.libs)) + '\n')
             for lib in self.libs:
                 file.write(str(lib.id) + ' ')

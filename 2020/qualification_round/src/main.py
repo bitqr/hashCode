@@ -12,12 +12,14 @@ if __name__ == '__main__':
 
     file_name = '../input/' + inputs_array[instance_index]
 
+    print("Creating instance...")
     instance = Instance(file_name)
-    print(instance.to_string())
+    #print(instance.to_string())
 
     solver = Solver(instance)
 
-    solution = solver.solve()
+    print("Start solving...")
+    solution = solver.solver()
 
     #print("Score =", solution.compute_score())
     solution.write('../output/' + outputs_array[instance_index])

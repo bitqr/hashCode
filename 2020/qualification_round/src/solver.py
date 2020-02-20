@@ -8,7 +8,7 @@ class Solver:
     def __init__(self, instance: Instance):
         self.instance = instance
 
-    def solve(self) -> Solution:
+    def solver(self) -> Solution:
         libs = self.instance.libs
         book_to_scan = dict()
         for lib in libs:

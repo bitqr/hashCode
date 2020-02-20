@@ -12,14 +12,17 @@ class Instance:
             self.nb_libraries = int(file_split[0].split(' ')[1])
             self.nb_days = int(file_split[0].split(' ')[2])
             self.scores = []
+            items = file_split[1].split(' ')
             for i in range(0, self.nb_books):
-                self.scores.append(int(file_split[1].split(' ')[i]))
+                self.scores.append(int(items[i]))
             self.libs = []
             for i in range(0, self.nb_libraries):
-                book_nb = int(file_split[2+2*i].split(' ')[0])
-                sign_up = int(file_split[2+2*i].split(' ')[1])
-                book_per_day = int(file_split[2+2*i].split(' ')[2])
-                books = [int(j) for j in file_split[3+2*i].split(' ')]
+                items = file_split[2+2*i].split(' ')
+                book_nb = int(items[0])
+                sign_up = int(items[1])
+                book_per_day = int(items[2])
+                books_indices = file_split[3+2*i].split(' ')
+                books = [int(j) for j in books_indices]
                 self.libs.append(Library(i, book_nb, sign_up, book_per_day, books))
 
     def to_string(self) -> str:

@@ -3,8 +3,10 @@ from solver import Solver
 from solution import Solution
 
 if __name__ == '__main__':
-    inputs_array = []
-    outputs_array = []
+    inputs_array = ['a_example.txt', 'b_read_on.txt', 'c_incunabula.txt', 'd_tough_choices.txt', 'e_so_many_books.txt',
+                    'f_libraries_of_the_world.txt']
+    outputs_array = ['a_example.out', 'b_read_on.out', 'c_incunabula.out', 'd_tough_choices.out', 'e_so_many_books.out',
+                     'f_libraries_of_the_world.out']
 
     instance_index = 0
 

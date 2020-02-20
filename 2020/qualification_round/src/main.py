@@ -22,5 +22,5 @@ if __name__ == '__main__':
     print(found)
 
     solution = Solution(instance, found)
-    print("Score =", solution.compute_score())
+    #print("Score =", solution.compute_score())
     solution.write('../output/' + outputs_array[instance_index])

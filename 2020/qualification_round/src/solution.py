@@ -3,7 +3,7 @@ from library import Library
 
 class Solution:
 
-    def __init__(self, libs: [Library], book_to_scan: [[int]]):
+    def __init__(self, libs: [Library], book_to_scan):
         self.libs = libs
         self.book_to_scan = book_to_scan
 
@@ -12,7 +12,10 @@ class Solution:
             file.write(str(len(self.libs)) + '\n')
             for lib in self.libs:
                 file.write(str(lib.id) + ' ')
+                file.write(str(len(self.book_to_scan[lib.id])) + '\n')
+                file.write(str(self.book_to_scan[lib.id]))
             file.close()
+
 
     def compute_score(self):
         pass

@@ -9,13 +9,15 @@ class Solution:
 
     def write(self, file_name: str):
         with open(file_name, 'w') as file:
+            print(self.libs)
             file.write(str(len(self.libs)) + '\n')
             for lib in self.libs:
                 file.write(str(lib.id) + ' ')
                 file.write(str(len(self.book_to_scan[lib.id])) + '\n')
-                file.write(str(self.book_to_scan[lib.id]))
+                for i in self.book_to_scan[lib.id]:
+                    file.write(str(i)+" ")
+                file.write("\n")
             file.close()
-
 
     def compute_score(self):
         pass

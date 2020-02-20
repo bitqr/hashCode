@@ -1,5 +1,6 @@
 from library import Library
 
+
 class Instance:
 
     def __init__(self, file_name: str):

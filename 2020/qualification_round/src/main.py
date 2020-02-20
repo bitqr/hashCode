@@ -8,7 +8,7 @@ if __name__ == '__main__':
     outputs_array = ['a_example.out', 'b_read_on.out', 'c_incunabula.out', 'd_tough_choices.out', 'e_so_many_books.out',
                      'f_libraries_of_the_world.out']
 
-    instance_index = 0
+    instance_index = 1
 
     file_name = '../input/' + inputs_array[instance_index]
 
@@ -17,10 +17,7 @@ if __name__ == '__main__':
 
     solver = Solver(instance)
 
-    found = solver.solve()
+    solution = solver.solve()
 
-    print(found)
-
-    solution = Solution(instance, found)
     #print("Score =", solution.compute_score())
     solution.write('../output/' + outputs_array[instance_index])

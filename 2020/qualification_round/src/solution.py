@@ -3,7 +3,7 @@ from instance import Instance
 
 class Solution:
 
-    def __init__(self, instance: Instance, indices: [int]):
+    def __init__(self, instance: Instance, libraries: [int]):
         pass
         # self.types = indices
         # self.instance = instance

@@ -6,7 +6,7 @@ if __name__ == '__main__':
     inputs_array = ['a_example.in', 'b_small.in', 'c_medium.in', 'd_quite_big.in', 'e_also_big.in']
     outputs_array = ['a_example.out', 'b_small.out', 'c_medium.out', 'd_quite_big.out', 'e_also_big.out']
 
-    instance_index = 4
+    instance_index = 1
 
     file_name = '../input/' + inputs_array[instance_index]
 

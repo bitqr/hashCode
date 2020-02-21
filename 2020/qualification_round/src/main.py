@@ -9,6 +9,8 @@ if __name__ == '__main__':
 
     instance_index = 1
 
+    overall_score = 0
+
     for instance_index in range(0, 6):
 
         file_name = '../input/' + inputs_array[instance_index]
@@ -22,4 +24,7 @@ if __name__ == '__main__':
 
         score = solution.compute_score(instance)
         print(f"Solution score = {score}")
+        overall_score += score
         solution.write('../output/' + outputs_array[instance_index])
+
+    print(f"\n\n\nOVERALL SCORE -------> {overall_score}")

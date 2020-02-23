@@ -4,7 +4,6 @@ from library import Library
 class Instance:
 
     def __init__(self, file_name: str):
-        pass
         with open(file_name, 'r') as file:
             x = file.read()
             file_split = x.splitlines()
@@ -35,3 +34,10 @@ class Instance:
         for lib in self.libs:
             s += lib.to_string() + "\n"
         return s
+
+    def compute_lib_score(self, lib: Library) -> int:
+        result = 0
+        for book in lib.books:
+            result += self.scores[book]
+        return result
+
